@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset="us-ascii" />
+				<title>Test Instances for Multiobjective Discrete Optimization Problems | MULTIOBJECTIVE OPTIMIZATION LIBRARY | Gokhan Kirlik</title>
+		<meta name="author" content="Gokhan Kirlik" />
+		<meta name="robots" content="all" />
+		<meta name="generator" content="Sandvox 2.8.9" />
+		<meta name="viewport" content="width=770" />
+		<meta http-equiv="X-UA-Compatible" content="IE=100" />
+		<link rel="canonical" href="http://home.ku.edu.tr/~moolibrary/" />
+		<link rel="stylesheet" type="text/css" href="sandvox_Cirrus/main.css" title="Cirrus" />
+		<!--
+		Photo credits for this website's design: <http://home.ku.edu.tr/~moolibrary/sandvox_Cirrus/Credits.rtf>
+		Licensing for this website's design:     <http://home.ku.edu.tr/~moolibrary/sandvox_Cirrus/License.rtf>
+		-->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                               extensions: ["tex2jax.js"],
+                               jax: ["input/TeX","output/HTML-CSS"],
+                               tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+                               });
+        </script>
+        <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
+
+	</head>
+	<body class="sandvox has-page-title no-sidebar no-custom-banner home-page no-IR" id="home_ku_edu_tr_moolibrary" >
+				<div id="page-container">
+			<div id="page">
+				<div id="page-top" class="no-logo has-title has-tagline">
+					<div id="title">
+						<h1 class="title"><span class="in">MULTIOBJECTIVE OPTIMIZATION LIBRARY</span></h1>
+						<p id="tagline"><span class="in"><span style="font-size: 13px;">This page contains source codes and test problems for Multiobjective Optimization Problems. </span><br /></span></p>
+					</div><!-- title -->
+					<div id="sitemenu-container">
+						
+					</div> <!-- sitemenu-container -->
+				</div> <!-- page-top -->
+				<div class="clear below-page-top"></div>
+				<div id="page-content" class="">
+					<div id="main">
+						<div id="main-top"></div>
+						<div id="main-content">
+							<h2 class="title"><span class="in"><strong>Test Instances for Multiobjective Discrete Optimization Problems</strong></span></h2>
+							<div class="article">
+								<div class="article-content">
+									<div class="RichTextElement">
+										<div>
+											<div class="first wide left">
+												<div style="width:700px;" class="graphic"><div class="RichTextElement">
+														<div class="figure-content">
+															<p>Three classes of test problems are used to generate random instances for multiobjective discrete optimization (MODO) problems. The test problems are<ol><li>Multiobjective knapsack problem&nbsp;</li><li>Multiobjective assignment problem</li><li>Multiobjective integer linear programming problem.&nbsp;</li></ol><p>The multiobjective knapsack and assignment problems are generated in [<a href="http://www.sciencedirect.com/science/article/pii/S0377221713006474" target="_blank"><span style="color: rgb(0, 80, 180);">Kirlik, G. and Say&#305;n, S., A new algorithm for generating all nondominated solutions of multiobjective discrete optimization problems, European Journal of Operational Research, vol 232(3), 2014, pp. 479-488</span></a>.] These test problems are used to compare different algorithms on generating nondominated solutions for MODO problems. The multiobjective integer linear programming problems test problems are created in &nbsp;<span style="color: rgb(0, 80, 180)">[Kirlik, G. and Say&#305;n, S., Computing nadir point for multiobjective discrete optimization problems, Working Paper, 2014]</span> to compare nadir point determination algorithms.<p><strong>Multiobjective Knapsack Problems (<a href="kp.zip"><span style="color: rgb(4, 51, 255);">download</span></a>)</strong></p>
+															The multiobjective knapsack problem consists of $n$ objects, $r^{th}$ object in the knapsack has a positive integer weight $w_r$ and $p$ non-negative integer profits $v_{jr}$ where $p$ represents number of objective functions. The knapsack has a positive integer capacity $W$. Decision variable $x_r$ denotes whether item $r$ is selected for the knapsack or not.
+                                                            <p>\begin{align}
+                                                            \max  & \sum_{r=1}^n v_{jr}  x_r \quad j=1, \ldots, p \\
+                                                            \mbox{s.t.} &  \sum_{r=1}^{n} w_r x_r \le W \\
+                                                            &  x_r \in \{0, 1\} \quad r=1, \ldots, n
+                                                            \end{align}
+                                                            </p>
+                                                            The multiobjective knapsack problem instances are generated for $p=3$, $4$ and $5$ cases, and $v_{jr}$ and $w_r$ are random integers drawn from the interval $[1, 1000]$ where $j \in \{1, \ldots, p\}$ and $r \in \{1, \ldots, n\}$. The capacity of the knapsack is calculated as $W = \left \lceil 0.5 \left(\sum_{j=1}^n  w_j \right) \right \rceil$. The total number of data files for the multiobjective knapsack problem is $160$. $100$, $40$ and $20$ of the instances have $p=3$, $p=4$ and $p=5$ numbers of objective functions, respectively. The data file names are given in the following format, "KP_p-X_n-Y_ins-Z.dat." KP stands for the knapsack problem, X represents the number of objective functions, Y shows the number of objects, and Z is the instance number. The format of each data file is:<ul><li>Number of objective functions $(p)$.</li><li>Number of objects $(n)$. </li><li>Capacity of the knapsack $(W \in \mathbb{Z})$.</li><li>Profits of the objects in each objective function, $\mathbb{Z}^{p \times n}$.</li><li>Weights of the objects $(w \in \mathbb{Z}^n)$.</li></ul><p style="font-weight: bold;"><br /></p><p style="font-weight: bold;">Multiobjective Assignment Problems (<a href="ap.zip"><span style="color: rgb(4, 51, 255);">download</span></a>)</p>The assignment problem aims to obtain optimal assignments between a set of agents $r \in \{1,\ldots,n\}$ and a set of tasks $l \in \{1,\ldots,n\}$ where each assignment has a non-negative cost $c_{jrl}$.                                                             <p>\begin{align}
+                                                            \min &  \sum_{r=1}^n \sum_{l=1}^n c_{jrl} x_{rl} \quad j=1, \ldots, p \\
+                                                            \mbox{s.t.}  &  \sum_{l=1}^{n} x_{rl} = 1 \quad r=1, \ldots, n  \\
+                                                            &  \sum_{r=1}^{n} x_{rl} = 1 \quad l=1, \ldots, n \\
+                                                            &  x_{rl} \in \{0, 1\} \quad r=1, \ldots, n; \; l=1, \ldots, n
+                                                            \end{align}
+                                                            </p>
+                                                            Test problem instances for the multiobjective assignment problem are formed in sizes varying from $5$ to $50$ with increments of $5$ and $p=3$. The objective function coefficients are generated randomly in the interval $[1,20]$, and all are integers. The total number of data files for the multiobjective assignment problem is $100$. The data file names are given in the following format, "AP_p-X_n-Y_ins-Z.dat." AP stands for the assignment problem, X represents the number of objective functions, Y shows the number of tasks, and Z is the instance number. The format of each data file is:<ul><li>Number of objective functions $(p)$.</li><li>Number of tasks $(n)$.</li><li>Cost of the assignment $(c \in \mathbb{Z}^{p \times n \times n})$.</li></ul><p><br /></p><p><strong>Multiobjective Integer Linear Programming Problems (</strong><a href="ilp.zip"><strong><span style="color: rgb(7, 53, 255)">download</span></strong></a><strong>)</strong></p>In multiobjective integer linear programming (MOILP) problems, $m$ and $n$ represent the number of constraints and number of variables, respectively, and $x \in \mathbb{R}^n$ is the decision vector of the problem. Given coefficients of the objective functions $c_{jl}$, the technical coefficients $a_{rl}$, and right-hand side values $b_{r}$ where $r \in \{1,\ldots,m\}$, $l \in \{1,\ldots,n\}$ and $j \in \{1,\ldots,p\}$.
+                                                                <p>\begin{align}
+                                                                \max & \sum_{l=1}^n c_{jl} x_l \quad j=1, \ldots, p \\
+                                                                \mbox{s.t.} &  \sum_{l=1}^n a_{rl} x_l \le b_r \quad r=1, \ldots, m  \\
+                                                                &   x_l \ge 0 \mbox{ and integer} \quad l=1, \ldots, n.
+                                                                \end{align}
+                                                                </p>
+                                                                <p>We consider MOILP problems with $p=3,4$ and $5$, $m=5,10,\ldots,50$ and $n=2m$ for each $m$. The coefficients of the objective functions $(c_{jl})$ are generated in the ranges $[-100,-1]$ with probability $0.2$ and $[0,100]$ with probability $0.8$. The technical coefficients $(a_{rl})$ are generated in the ranges $[-100,-1]$ with probability $0.1$, $[1,100]$ with probability 0.8, and $a_{rl}=0$ with probability 0.1. Right-hand side value of each constraint $(b_r)$ is generated randomly in the range of $100$ and $\sum_{l=1}^n a_{rl}$. The total number of data files for the MOILP is $220$. $100, 80$ and $40$ of the instances have $p=3$, $p=4$ and $p=5$ numbers of objective functions, respectively. The data file names are given in the following format, "ILP_p-U_n-X_m-Y_ins-Z.dat." ILP stands for the integer linear programming, U represents the number of objective functions, X and Y show the number of columns (decision variables) and rows (number of constraints) respectively, and Z is the instance number. The format of each data file is:<ul><li>Number of objective functions $(p)$.</li><li>Number of columns $(n)$.</li><li>Number of rows $(m)$.</li><li>Coefficients of the objective functions $(c \in \mathbb{Z}^{p \times n})$.</li><li>Technical coefficients, $(a \in \mathbb{Z}^{m \times n})$.</li><li>Right-hand side values, $(b \in \mathbb{Z}^m)$.</li></ul></p> <p><u>Note</u>: According to random MOILP generation scheme, it is possible for a generated MOILP instance to have an unbounded efficient set. Among all ILP instances, only the instance named "ILP_p-5_n-10_m-5_ins-1.dat" has an unbounded efficient set.</p>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+                                            <h2 class="title"><span class="in"><strong>Genarating All Nondominated Solutions for Multiobjective Discrete Optimization Problems</strong></span></h2>
+
+											<div class="not-first-item wide left">
+												<div style="width:700px;" class="graphic"><div class="RichTextElement">
+														<div class="figure-content">
+                                                            <p>This method generates all nondominated solutions for multiobjective discrete optimization problems with any number of objective functions. In this algorithm, the search is managed over $(p-1)$-dimensional rectangles where $p$ represents the number of objectives in the problem. For each rectangle, two-stage optimization problems are solved such that the first-stage is well-known $\varepsilon$-constraint scalarization. It is showed that algorithm enumerates all nondominated solutions of MODO problems in finite number iterations [<a href="http://www.sciencedirect.com/science/article/pii/S0377221713006474" target="_blank"><span style="color: rgb(0, 80, 180);">Kirlik, G. and Say&#305;n, S., A new algorithm for generating all nondominated solutions of multiobjective discrete optimization problems, European Journal of Operational Research, vol 232(3), 2014, pp. 479-488</span></a>]. </p> <p> Source code of the algorithm with Makefile and sample data files can be downloaded from this link (<a href="kirliksayin2014_sourcecode.zip"><span style="color: rgb(4, 51, 255);"><strong>download</strong></span></a>) and used free of charge for academical purposes. The code utilize IBM ILOG's CPLEX solver for subproblems [<a href="http://www-03.ibm.com/software/products/en/ibmilogcpleoptistud/" target="_blank"><span style="color: rgb(0, 80, 180);">web</span></a>]. (Cplex 12.6.3 users should use this version of the source code <a href="kirliksayin2016_sourcecode.zip"><span style="color: rgb(4, 51, 255);"><strong>download</strong></span></a>) Software documentation of the implemantation is generated by using Doxygen and avaiable in this <a target="_blank" href="html/index.html"><span style="color: rgb(4, 51, 255);"><strong>link</strong></span></a>.</p>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div> <!-- /article-content -->
+								<div class="article-info">
+									<div class="timestamp in"><span class="in">27 Mar 2014 23:20</span></div>
+								</div> <!-- /article-info -->
+							</div> <!-- /article -->
+						</div> <!-- main-content -->
+						<div id="main-bottom"></div>
+					</div> <!-- main -->
+				</div> <!-- content -->
+				<div class="clear below-content"></div>
+				<div id="page-bottom">
+					<div id="page-bottom-contents">
+                        <div>gokhankirlik@gmail.com &copy; Last updated: October 2016</div>
+						<div class="hidden"> <a rel="nofollow" href="#title">[Back To Top]</a></div>
+					</div>
+				</div> <!-- page-bottom -->
+			</div> <!-- container -->
+			<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+		</div> <!-- specific body type -->
+		<script charset="utf-8" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+		<script>
+		if (typeof jQuery === 'undefined') document.write('<scr'+'ipt src="_Resources/jquery-1.9.1.min.js" charset="utf-8"></scr'+'ipt>');
+		</script>
+		
+		<script>
+		$(document).ready(function(){var e=window.devicePixelRatio&&window.devicePixelRatio>1?window.devicePixelRatio:1,t=window.innerWidth>window.innerHeight?screen.height:screen.width;$("span[data-img-src-hr]").each(function(){var n=$(this).data("width"),r=$(this).data("height"),i=$(this).data("alt"),s='<img src="',o=e>1&&n<2*t,u=0,a=$(this)[0].attributes;if(o){s+=$(this).data("img-src-hr")}else{s+=$(this).data("img-src")}s+='"';if(i)s+=' alt="'+i+'"';if(n)s+=' width="'+n+'"';if(r)s+=' height="'+r+'"';for(l=a.length;u<l;u++){var f=a[u].name;if(!f.match(/(data-width|data-height|data-alt|data-img-src)/g)){s+=" "+f+'="'+a[u].value+'"'}}s+=" />";$(this).replaceWith($(s))})})
+		</script>
+		
+	</body>
+</html>
