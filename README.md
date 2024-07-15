@@ -1,6 +1,6 @@
 MULTIOBJECTIVE OPTIMIZATION LIBRARY
 
-This page contains source codes and test problems for Multiobjective Optimization Problems, originally shared at http://home.ku.edu.tr/~moolibrary.  
+This page contains source codes and test problems for Multiobjective Optimization Problems, originally shared at http://home.ku.edu.tr/~moolibrary by Gökhan Kirlik.  The original site is no longer serviced.
 
 TEST INSTANCES FOR MULTIOBJECTIVE DISCRETE OPTIMIZATION PROBLEMS
 
